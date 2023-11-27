@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+  .text-stroke {
+    -webkit-text-stroke: 6px #fff; /* Contorno com 2 pixels de largura e cor preta */
+    text-stroke: 6px #fff;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #05e51c; /* Faz com que o texto seja transparente dentro do contorno */
+  }
+  .level-shadow {
+    box-shadow: 3px 3px 10px 0px #00000082;
+
+  }
+}
+
+.level-styles {
+  @apply bg-light-green text-dark-green border-4 border-white  level-shadow rounded-full w-16 h-16 flex justify-center items-center;
+}
+
+.button-controls {
+  @apply bg-[#6DE9A6] text-[#004d59]  p-1 w-14 h-12 border-4 border-[#004d59] rounded-md
+}
+
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
