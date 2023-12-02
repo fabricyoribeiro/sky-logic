@@ -25,5 +25,5 @@ export default function LevelOne() {
     </div>
   )
 
-  return <Game gates={gates} leftHit={828} topHit={301} challenge={challenge} />
+  return <Game key={1} gates={gates} leftHit={828} topHit={301} challenge={challenge} />
 }

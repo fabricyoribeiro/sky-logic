@@ -25,6 +25,6 @@ export default function LevelThree() {
     </div>
   )
   return (
-    <Game gates={gates} leftHit={828} topHit={301} challenge={challenge} />
+    <Game key={1} gates={gates} leftHit={828} topHit={301} challenge={challenge} />
   )
 }
