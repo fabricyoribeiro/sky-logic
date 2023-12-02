@@ -86,7 +86,7 @@ export default function Game({gates, topHit, leftHit, challenge}:Props) {
   for (let i = 1; i < 37; i++) {
     if (i > 1 && i % 6 === 0) {
       divs.push(
-        <div className="bg-light-blue  border border-dark-blue flex justify-center items-center">
+        <div  className="bg-light-blue  border border-dark-blue flex justify-center items-center">
           <Image alt="" src={gates[pos]} width={80} height={95} />
         </div>
       )
@@ -161,9 +161,9 @@ export default function Game({gates, topHit, leftHit, challenge}:Props) {
           <div className="bg-white h-full w-full pl-8  rounded-md border border-[#004d59] flex flex-row gap-2 items-center ">
             {commands?.map(command =>
               command === 'right' ? (
-                <ArrowRight weight="bold" className="button-controls" />
+                <ArrowRight key={command} weight="bold" className="button-controls" />
               ) : (
-                <ArrowUp weight="bold" className="button-controls" />
+                <ArrowUp key={command} weight="bold" className="button-controls" />
               )
             )}
           </div>
