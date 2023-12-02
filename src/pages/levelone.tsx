@@ -8,6 +8,10 @@ import Nxor from '../../public/gates/nxor.svg'
 import Or from '../../public/gates/or.svg'
 import Xor from '../../public/gates/xor.svg'
 
+import One from '../../public/gates/One.svg'
+import Two from '../../public/gates/Two.svg'
+import Three from '../../public/gates/Three.svg'
+
 import Void from '../../public/gates/void.svg'
 
 import { ArrowRight, ArrowUp, Play, Trash } from 'phosphor-react'
@@ -17,7 +21,7 @@ import Game from '@/components/Game'
 
 export default function LevelOne() {
   // const gates = [Void, Nand, Void, And, Void, Nor]
-  const gates = [Nand, And, Nor]
+  const gates = [One, Two, Three]
   const challenge = (
     // <div className="text-4xl text-[#004d59] w-fit px-4 bg-light-blue border border-dark-blue rounded-lg mb-2 h-14 flex flex-row items-center gap-2">
     //   <span>1</span> 

@@ -144,30 +144,30 @@ export default function Game({
           <Image
             src={gates[0]}
             alt=""
-            width={level !== 1 ? 140 : 80}
+            width={level !== 1 ? 140 : 100}
             height={95}
-            className={clsx('absolute  top-[95px]', {
-              'left-[840px]' : level === 1,
+            className={clsx('absolute  top-[100px]', {
+              'left-[830px]' : level === 1,
               'left-[810px]' : level === 2 || level === 3,
             })}
           />
           <Image
             src={gates[1]}
             alt=""
-            width={level !== 1 ? 140 : 80}
+            width={level !== 1 ? 140 : 100}
             height={95}
-            className={clsx('absolute  top-[285px]', {
-              'left-[840px]' : level === 1,
+            className={clsx('absolute  top-[290px]', {
+              'left-[830px]' : level === 1,
               'left-[810px]' : level === 2 || level === 3,
             })}
           />
           <Image
             src={gates[2]}
             alt=""
-            width={level !== 1 ? 140 : 80}
+            width={level !== 1 ? 140 : 100}
             height={95}
-            className={clsx('absolute  top-[475px] ', {
-              'left-[840px]' : level === 1,
+            className={clsx('absolute  top-[480px] ', {
+              'left-[830px]' : level === 1,
               'left-[810px]' : level === 2 || level === 3,
             })}
           />
