@@ -15,7 +15,7 @@ import { useState } from 'react'
 import Modal from '@/components/Modal'
 import Game from '@/components/Game'
 
-export default function LevelOne() {
+export default function LevelTwo() {
   const gates = [Void, And, Void, Nand, Void, Nor]
   const challenge = (
     <div className="text-4xl text-[#004d59] w-fit px-4 bg-light-blue border border-dark-blue rounded-lg mb-2 h-14 flex flex-row items-center gap-2">
@@ -24,6 +24,7 @@ export default function LevelOne() {
       <span> 0 = 1</span>
     </div>
   )
-
-  return <Game gates={gates} leftHit={828} topHit={301} challenge={challenge} />
+  return (
+    <Game gates={gates} leftHit={828} topHit={301} challenge={challenge} />
+  )
 }

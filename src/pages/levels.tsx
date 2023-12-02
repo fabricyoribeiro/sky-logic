@@ -10,10 +10,10 @@ export default function Levels() {
           <Link href='/levelone' className="level-styles">
             <span>1</span>
           </Link>
-          <Link href='/' className="level-styles">
+          <Link href='/leveltwo' className="level-styles">
             <span>2</span>
           </Link>
-          <Link href='/' className="level-styles">
+          <Link href='/levelthree' className="level-styles">
             <span>3</span>
           </Link>
         </div>
