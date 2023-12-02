@@ -16,14 +16,18 @@ import Modal from '@/components/Modal'
 import Game from '@/components/Game'
 
 export default function LevelOne() {
-  const gates = [Void, And, Void, Nand, Void, Nor]
+  // const gates = [Void, Nand, Void, And, Void, Nor]
+  const gates = [Nand, And, Nor]
   const challenge = (
-    <div className="text-4xl text-[#004d59] w-fit px-4 bg-light-blue border border-dark-blue rounded-lg mb-2 h-14 flex flex-row items-center gap-2">
-      <span>1</span> 
-      <span className="bg-white px-8 h-fit rounded-full">?</span>
-      <span> 0 = 1</span>
+    // <div className="text-4xl text-[#004d59] w-fit px-4 bg-light-blue border border-dark-blue rounded-lg mb-2 h-14 flex flex-row items-center gap-2">
+    //   <span>1</span> 
+    //   <span className="bg-white px-8 h-fit rounded-full">?</span>
+    //   <span> 0 = 1</span>
+    // </div>
+    <div className='text-4xl text-[#004d59] w-fit px-4 bg-light-blue border border-dark-blue rounded-lg mb-2 h-14 flex items-center justify-center'>
+      <span>A = 1 | B = 0 | S = 1</span>
     </div>
   )
 
-  return <Game key={1} gates={gates} leftHit={828} topHit={301} challenge={challenge} />
+  return <Game key={1} level={1} gates={gates} leftHit={828} topHit={111} challenge={challenge} />
 }
