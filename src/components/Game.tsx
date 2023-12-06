@@ -20,7 +20,7 @@ interface Props {
   topHit: number
   leftHit: number
   challenge: any
-  level?: number
+  level: number
 }
 
 export default function Game({
