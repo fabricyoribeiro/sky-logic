@@ -14,7 +14,7 @@ export default function Home() {
       <main className="flex flex-col items-center gap-10 ">
         <Image src={Aviator} height={200} width={200} alt={''} />
         <Image alt="" src={Logo} width={350} height={50} />
-        <Link href="/levels">
+        <Link href="/instructions">
           <button className="text-4xl bg-light-green border-dark-green border-4 px-8 py-4 font-bowlbyone rounded-full ">
             Jogar
           </button>
