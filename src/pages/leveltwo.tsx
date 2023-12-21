@@ -29,7 +29,7 @@ export default function LevelTwo() {
     //   <span className="bg-white px-8 h-fit rounded-full">?</span>
     //   <span> 0 = 1</span>
     // </div>
-    <div className='text-4xl text-[#004d59] w-fit px-4 bg-light-blue border border-dark-blue rounded-lg mb-2 h-14 flex items-center justify-center'>
+    <div className='text-2xl text-[#004d59] w-fit px-4 bg-light-blue border border-dark-blue rounded-lg mb-1 h-10 flex items-center justify-center'>
     <span>A = 1 | B = 0 | C = 1 | S = 0</span>
   </div>
   )

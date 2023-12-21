@@ -10,10 +10,11 @@ import Xor from '../../public/gates/xor.svg'
 
 import Void from '../../public/gates/void.svg'
 
-import { ArrowRight, ArrowUp, Play, Trash } from 'phosphor-react'
+import { ArrowRight, ArrowUUpLeft, ArrowUp, House, Info, Play, Trash } from 'phosphor-react'
 import { useState } from 'react'
 import Modal from '@/components/Modal'
 import clsx from 'clsx'
+import Link from 'next/link'
 
 interface Props {
   gates: any[]
@@ -123,7 +124,15 @@ export default function Game({
           <span> 0 = 1</span>
         </div> */}
 
-        {challenge}
+        <div className='flex justify-between items-center'>
+          {challenge}
+          <div className='flex gap-4'>
+              <Info size={30} weight='bold' color='#004d59'/>
+            <Link href="/">
+              <House size={30} weight="bold" color='#004d59' />
+            </Link>
+          </div>
+        </div>
 
         <div className="w-[960px] h-[570px] grid grid-cols-6 gap-0 border border-dark-blue rounded-xl overflow-hidden relative">
           {divs}
@@ -136,7 +145,7 @@ export default function Game({
               position: 'absolute',
               top: `${top}px`,
               left: `${left}px`,
-              zIndex: 100,
+              zIndex: 100
             }}
           >
             <Image src={Aviator} width={100} alt="" />
@@ -147,8 +156,8 @@ export default function Game({
             width={level !== 1 ? 140 : 100}
             height={95}
             className={clsx('absolute  top-[100px]', {
-              'left-[830px]' : level === 1,
-              'left-[810px]' : level === 2 || level === 3,
+              'left-[830px]': level === 1,
+              'left-[810px]': level === 2 || level === 3
             })}
           />
           <Image
@@ -157,8 +166,8 @@ export default function Game({
             width={level !== 1 ? 140 : 100}
             height={95}
             className={clsx('absolute  top-[290px]', {
-              'left-[830px]' : level === 1,
-              'left-[810px]' : level === 2 || level === 3,
+              'left-[830px]': level === 1,
+              'left-[810px]': level === 2 || level === 3
             })}
           />
           <Image
@@ -167,8 +176,8 @@ export default function Game({
             width={level !== 1 ? 140 : 100}
             height={95}
             className={clsx('absolute  top-[480px] ', {
-              'left-[830px]' : level === 1,
-              'left-[810px]' : level === 2 || level === 3,
+              'left-[830px]': level === 1,
+              'left-[810px]': level === 2 || level === 3
             })}
           />
         </div>
