@@ -8,6 +8,9 @@ import Nxor from '../../public/gates/nxor.svg'
 import Or from '../../public/gates/or.svg'
 import Xor from '../../public/gates/xor.svg'
 
+import Airplane from '../../public/obstacles/airplane.png'
+
+
 import GroupOne from '../../public/gates_level_three/one.svg'
 import GroupTwo from '../../public/gates_level_three/two.svg'
 import GroupThree from '../../public/gates_level_three/three.svg'
@@ -43,6 +46,9 @@ export default function LevelThree() {
       leftHit={828}
       topHit={491}
       challenge={challenge}
+      obstacle={Airplane}
+      obstaclePoints={{x: 186, y:301}}
+      startPoints={{x: 28, y: 396}}
     />
   )
 }

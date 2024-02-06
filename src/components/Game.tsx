@@ -16,12 +16,22 @@ import Modal from '@/components/Modal'
 import clsx from 'clsx'
 import Link from 'next/link'
 
+interface Points{
+  x: number
+  y: number
+}
+
 interface Props {
   gates: any[]
   topHit: number
   leftHit: number
   challenge: any
   level: number
+  obstacle?: any
+
+  startPoints?: Points
+  obstaclePoints?: Points
+
 }
 
 export default function Game({
@@ -29,15 +39,21 @@ export default function Game({
   topHit,
   leftHit,
   challenge,
-  level
+  level,
+  obstacle,
+  obstaclePoints,
+  startPoints
 }: Props) {
-  const [top, setTop] = useState<number>(16)
-  const [left, setLeft] = useState<number>(28)
+  const [top, setTop] = useState<number>(startPoints?.y || 16)
+  const [left, setLeft] = useState<number>(startPoints?.x || 28)
   const [commands, setCommands] = useState<string[]>([])
   // const [topHit, leftHit] = [111, 828]
 
   const [modalOpen, setModalOpen] = useState<boolean>(false)
   const [passedLevel, setPassedLevel] = useState<boolean>(false)
+
+  // const { x, y } = obstaclePoints
+
 
   const delay = (ms: number | undefined) =>
     new Promise(resolve => setTimeout(resolve, ms))
@@ -73,6 +89,9 @@ export default function Game({
     if (topHit === topTemp && leftHit === leftTemp) {
       // alert('ganhou')
       setPassedLevel(true)
+      setModalOpen(true)
+    }else if(leftTemp === obstaclePoints?.x && topTemp === obstaclePoints?.y){
+      setPassedLevel(false)
       setModalOpen(true)
     } else {
       setPassedLevel(false)
@@ -179,6 +198,17 @@ export default function Game({
               'left-[830px]': level === 1,
               'left-[810px]': level === 2 || level === 3
             })}
+          />
+          <Image 
+            src={obstacle}
+            alt=''
+            width={100}
+            style={{
+              top:obstaclePoints?.y,
+              left:obstaclePoints?.x,
+              position: 'absolute'
+            }}
+            // className={`absolute top-[${obstaclePoints?.x}px] left-[${obstaclePoints?.y}px]`}
           />
         </div>
 

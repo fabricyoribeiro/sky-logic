@@ -12,6 +12,8 @@ import GroupOne from '../../public/gates_level_two/one.svg'
 import GroupTwo from '../../public/gates_level_two/two.svg'
 import GroupThree from '../../public/gates_level_two/three.svg'
 
+import Airplane from '../../public/obstacles/airplane.png'
+
 import Void from '../../public/gates/void.svg'
 
 import { ArrowRight, ArrowUp, Play, Trash } from 'phosphor-react'
@@ -45,6 +47,8 @@ export default function LevelTwo() {
       leftHit={828}
       topHit={301}
       challenge={challenge}
+      obstacle={Airplane}
+      obstaclePoints={{x: 508, y: 301}}
     />
   )
 }

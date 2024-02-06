@@ -1,4 +1,5 @@
 import Aviator from '../../public/assets/aviator.png'
+import Obstacle from '../../public/obstacles/airplane.png'
 import { Inter } from 'next/font/google'
 import Image from 'next/image'
 import { ArrowRight, ArrowUp, Trash } from 'phosphor-react'
@@ -11,7 +12,7 @@ export default function Instructions() {
     <main
       className={`bg-[url('../../public/assets/bg.png')] h-screen w-screen bg-no-repeat bg-cover flex items-center justify-center text-[#004d59] ${inter.className}`}
     >
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-3">
         <div className="flex justify-between items-center font-extrabold text-2xl">
           <span>Botões</span>
           <span>Instruções</span>
@@ -49,10 +50,20 @@ export default function Instructions() {
         <p className="text-xl font-semibold">
           Os seguintes valores são referentes ao circuito abaixo
         </p>
-        <div className='flex justify-between items-center'>
+        <div className="flex  items-center">
           <div className="flex items-center gap-16 text-xl">
             <span className="font-semibold">A = 1 | B = 0 | S = 0</span>
             <Image alt="" src={Two} width={100} />
+          </div>
+
+        </div>
+        <span className="font-extrabold text-2xl">Cuidado</span>
+        <div className="flex items-center justify-between gap-3">
+          <div className='flex items-center gap-3'>
+            <Image src={Obstacle} alt="" width={100} />
+            <p className="text-xl font-semibold">
+              Se o avião colidir com o obstáculo, você perderá
+            </p>
           </div>
           <Link
             href="/levels"
