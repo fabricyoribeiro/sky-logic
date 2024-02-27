@@ -10,7 +10,7 @@ import Xor from '../../public/gates/xor.svg'
 
 import Void from '../../public/gates/void.svg'
 
-import { ArrowRight, ArrowUUpLeft, ArrowUp, House, Info, Play, Trash } from 'phosphor-react'
+import { ArrowRight, ArrowCounterClockwise, ArrowUp, House, Info, Play, Trash } from 'phosphor-react'
 import { useState } from 'react'
 import Modal from '@/components/Modal'
 import clsx from 'clsx'
@@ -54,6 +54,30 @@ export default function Game({
 
   // const { x, y } = obstaclePoints
 
+  const alterarNivelLocalStorage = (numeroDoNivel: string) => {
+    try {
+      // Recupera os dados do localStorage (se existirem)
+      const levelStatesString:any = localStorage.getItem('levelStates');
+  
+      // Converte a string JSON para objeto
+      const levelStates = JSON.parse(levelStatesString) || {};
+  
+      // Verifica se o número do nível existe no objeto
+      if (levelStates.hasOwnProperty(numeroDoNivel)) {
+        // Inverte o valor booleano do nível
+        levelStates[numeroDoNivel] = !levelStates[numeroDoNivel];
+  
+        // Salva o objeto atualizado de volta no localStorage
+        localStorage.setItem('levelStates', JSON.stringify(levelStates));
+      } else {
+        console.log(`O nível ${numeroDoNivel} não foi encontrado.`);
+      }
+    } catch (error) {
+      console.error('Erro ao alterar o nível no localStorage:', error);
+    }
+  };
+  
+
 
   const delay = (ms: number | undefined) =>
     new Promise(resolve => setTimeout(resolve, ms))
@@ -88,8 +112,10 @@ export default function Game({
     console.log(topTemp, leftTemp, topHit, leftHit)
     if (topHit === topTemp && leftHit === leftTemp) {
       // alert('ganhou')
+      alterarNivelLocalStorage(level === 1? 'level2': '' || level ===2? 'level3': '');
       setPassedLevel(true)
       setModalOpen(true)
+
     }else if(leftTemp === obstaclePoints?.x && topTemp === obstaclePoints?.y){
       setPassedLevel(false)
       setModalOpen(true)
@@ -242,6 +268,13 @@ export default function Game({
               const array = commands
               array.pop()
               setCommands([...array])
+            }}
+          />
+          <ArrowCounterClockwise 
+            weight="bold"
+            className="bg-[#6DE9A6] text-red-500  p-1 w-14 h-12 border-4 border-red-500 rounded-md"
+            onClick={() => {
+              setCommands([])
             }}
           />
           <div className="bg-white h-full w-full pl-8  rounded-md border border-[#004d59] flex flex-row gap-2 items-center ">
