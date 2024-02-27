@@ -16,7 +16,7 @@ export default function Home() {
         <Image alt="" src={Logo} width={350} height={50} />
         <Link href="/instructions">
           <button className="text-4xl bg-light-green border-dark-green border-4 px-8 py-4 font-bowlbyone rounded-full ">
-            Jogar
+            Jogarr
           </button>
         </Link>
       </main>
