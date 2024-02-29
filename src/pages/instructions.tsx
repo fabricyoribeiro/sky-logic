@@ -65,6 +65,12 @@ export default function Instructions() {
               Se o avião colidir com o obstáculo, você perderá
             </p>
           </div>
+          <Link href='https://youtu.be/VFibGtIubBg'
+          target='_blank'
+                className='font-bold text-red-600 border-2 border-red-600 p-4 rounded-full'
+          >
+            Assistir Tutorial
+          </Link>
           <Link
             href="/levels"
             className="bg-light-green border-4 border-dark-green py-3 px-8 rounded-full text-xl text-white  font-bold "
