@@ -9,7 +9,7 @@ import Link from "next/link";
 export default function Home() {
   function saveLevelStates() {
     const initialState = {
-      level2: false, // Nível 2 está bloqueado
+      level2: false, // Nível 2 está bloqueado test
       level3: false, // Nível 2 está bloqueado
     };
 
